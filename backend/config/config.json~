@@ -3,21 +3,21 @@
     "username": "postgres", // Usuário do PostgreSQL
     "password": "ch4ng3m3!", // Senha do PostgreSQL
     "database": "rview_dev", // Nome do banco de dados
-    "host": "db", // Host do banco
+    "host": "127.0.0.1", // Host do banco
     "dialect": "postgres" // Altere para 'postgres'
   },
   "test": {
     "username": "postgres",
     "password": "ch4ng3m3!",
     "database": "rview_test",
-    "host": "db",
+    "host": "127.0.0.1",
     "dialect": "postgres"
   },
   "production": {
     "username": "postgres",
     "password": "ch4ng3m3!",
     "database": "rview_prod",
-    "host": "db",
+    "host": "127.0.0.1",
     "dialect": "postgres"
   }
 }
