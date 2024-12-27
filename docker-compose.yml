@@ -17,12 +17,21 @@ services:
       - db
 
   frontend:
-    build: ./frontend
     container_name: frontend
+    build:
+      context: ./frontend
+    environment:
+      - CHOKIDAR_USEPOLLING=true
     ports:
-      - "3000:3000"
+      - "5173:5173"  # Mapeia a porta do Vite
     networks:
       - rview_network
+    volumes:
+      - ./frontend:/app  # Mapeia o código local para o contêiner
+      - /app/node_modules  # Evita conflitos com node_modules local
+    stdin_open: true
+    tty: true
+
     depends_on:
       - backend
 

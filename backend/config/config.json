@@ -1,10 +1,10 @@
 {
   "development": {
-    "username": "postgres", // Usuário do PostgreSQL
-    "password": "ch4ng3m3!", // Senha do PostgreSQL
-    "database": "rview_dev", // Nome do banco de dados
-    "host": "db", // Host do banco
-    "dialect": "postgres" // Altere para 'postgres'
+    "username": "postgres",
+    "password": "ch4ng3m3!",
+    "database": "rview_dev",
+    "host": "db",
+    "dialect": "postgres"
   },
   "test": {
     "username": "postgres",
