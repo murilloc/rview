@@ -1,0 +1,50 @@
+# Configuração de serviços
+services:
+  backend:
+    build: ./backend
+    container_name: backend
+    ports:
+      - "3001:3001"
+    environment:
+      DB_HOST: db
+      DB_PORT: 5432
+      DB_USER: postgres
+      DB_PASSWORD: ch4ng3m3!
+      DB_NAME: rview
+    networks:
+      - rview_network
+    depends_on:
+      - db
+
+  frontend:
+    build: ./frontend
+    container_name: frontend
+    ports:
+      - "3000:3000"
+    networks:
+      - rview_network
+    depends_on:
+      - backend
+
+  db:
+    image: postgres:14
+    container_name: db
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: ch4ng3m3!
+      POSTGRES_DB: rview
+    ports:
+      - "5432:5432"
+    networks:
+      - rview_network
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+# Configuração de volumes
+volumes:
+  pgdata:
+
+# Configuração de rede
+networks:
+  rview_network:
+    driver: bridge
