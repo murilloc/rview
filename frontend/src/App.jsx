@@ -1,15 +1,38 @@
-import React from 'react';
-import Header from './components/Header';
-import Body from './components/Body';
-import Footer from './components/Footer';
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import Header from "./Header";
+import Footer from "./Footer";
+import Body from "./Body";
 
+import AdminUsuarios from "./components/AdminUsuarios";
+import AdminLogs from "./components/AdminLogs";
+import AdminPerformance from "./components/AdminPerformance";
+import GraficosCisco from "./components/GraficosCisco";
+import GraficosNokia from "./components/GraficosNokia";
+import RelatoriosCisco from "./components/RelatoriosCisco";
+import RelatoriosNokia from "./components/RelatoriosNokia.jsx";
+import Logout from "./components/Logout";
+
+// Configuração principal do App
 const App = () => {
     return (
-        <div className="min-h-screen flex flex-col">
-            <Header />
-            <Body />
-            <Footer />
-        </div>
+        <Router>
+            <div className="flex flex-col min-h-screen">
+                <Header />
+                <Routes>
+                    {/* Rotas para cada item do menu */}
+                    <Route path="/" element={<Body />} />
+                    <Route path="/admin/usuarios" element={<AdminUsuarios />} />
+                    <Route path="/admin/logs" element={<AdminLogs />} />
+                    <Route path="/admin/performance" element={<AdminPerformance />} />
+                    <Route path="/graficos/cisco" element={<GraficosCisco />} />
+                    <Route path="/graficos/nokia" element={<GraficosNokia />} />
+                    <Route path="/relatorios/cisco" element={<RelatoriosCisco />} />
+                    <Route path="/relatorios/nokia" element={<RelatoriosNokia />} />
+                    <Route path="/logout" element={<Logout />} />
+                </Routes>
+                <Footer />
+            </div>
+        </Router>
     );
 };
 
