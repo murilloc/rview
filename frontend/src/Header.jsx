@@ -1,4 +1,3 @@
-import React from "react";
 import Logo from "./components/Logo.jsx";
 import NavigationMenu from "./components/NavigationMenu.jsx";
 import MenuItemGroup from "./components/MenuItemGroup.jsx";
