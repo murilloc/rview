@@ -2,22 +2,22 @@
   "development": {
     "username": "postgres",
     "password": "ch4ng3m3!",
-    "database": "rview_dev",
-    "host": "db",
+    "database": "rview",
+    "host": "localhost",
     "dialect": "postgres"
   },
   "test": {
     "username": "postgres",
     "password": "ch4ng3m3!",
     "database": "rview_test",
-    "host": "db",
+    "host": "localhost",
     "dialect": "postgres"
   },
   "production": {
     "username": "postgres",
     "password": "ch4ng3m3!",
     "database": "rview_prod",
-    "host": "db",
+    "host": "localhost",
     "dialect": "postgres"
   }
 }
